@@ -12,6 +12,7 @@
 
   packages = [
     cargo
+    just
     openssl
   ];
 
@@ -19,7 +20,6 @@
     [
       cargo
       dbus
-      just
       libxcb
       openssl
       pkg-config

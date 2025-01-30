@@ -15,6 +15,9 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       devShell.${system} = pkgs.callPackage ./nix/devShell.nix {};
-      packages.${system}.default = pkgs.callPackage ./nix/package.nix {};
+      packages.${system} = rec {
+        goose-cli = pkgs.callPackage ./nix/package.nix {};
+        default = goose-cli;
+      };
     };
 }
