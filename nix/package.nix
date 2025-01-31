@@ -13,7 +13,7 @@
 
   src = ../.;
 
-  cargoHash = lib.fakeHash;
+  cargoHash = "sha256-ytGriAhu1HnFfqM7yHR6MnL90d8s+77VVMg98NIUw2Y=";
 
   nativeBuildInputs =
     [
@@ -24,9 +24,13 @@
       pkg-config
     ];
 
+  # Use vendored dependencies
+  vendorSha256 = lib.fakeSha256;
+
   buildInputs =
     [
       openssl
+      dbus
     ];
 
   outputs = [
